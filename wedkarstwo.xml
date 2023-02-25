@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wedkarstwo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:noNamespaceSchemaLocation="wedkarstwo.xsd">
+
+	<main>
+		<wstep>Wędkarstwo moja pasja</wstep>
+		<topic>
+			<ryby kind="słodkowodne">
+				<typ id="1">	
+					<nazwa>Bieługa</nazwa>
+					<cechy>
+						<waga>1140</waga>
+						<dlugosc>4.5</dlugosc>
+						<unikalnosc>rzadka</unikalnosc>
+					</cechy>
+				</typ>
+				<typ id="2">	
+					<nazwa>Kaługa</nazwa>
+					<cechy>
+						<waga>1500</waga>
+						<dlugosc>6</dlugosc>
+						<unikalnosc>rzadka</unikalnosc>
+					</cechy>
+				</typ>
+				<typ id="3">	
+					<nazwa>Jesiotr amerykański</nazwa>
+					<cechy>
+						<waga>800</waga>
+						<dlugosc>6</dlugosc>
+						<unikalnosc>rzadka</unikalnosc>
+					</cechy>
+				</typ>
+				<typ id="4">	
+					<nazwa>Pangaz</nazwa>
+					<cechy>
+						<waga>300</waga>
+						<dlugosc>3</dlugosc>
+						<unikalnosc>popularna</unikalnosc>
+					</cechy>
+				</typ>
+				<typ id="5">	
+					<nazwa>Arapaima</nazwa>
+					<cechy>
+						<waga>200</waga>
+						<dlugosc>4.5</dlugosc>
+						<unikalnosc>popularna</unikalnosc>
+					</cechy>
+				</typ>
+				<typ id="6">	
+					<nazwa>Sum europejski</nazwa>
+					<cechy>
+						<waga>150</waga>
+						<dlugosc>3</dlugosc>
+						<unikalnosc>popularna</unikalnosc>
+					</cechy>
+				</typ>
+			</ryby>
+			<ryby kind="słonowodne">
+				<typ id="1">	
+					<nazwa>Rekin Wielorybi</nazwa>
+					<cechy>
+						<waga>15000</waga>
+						<dlugosc>12</dlugosc>
+						<unikalnosc>rzadka</unikalnosc>
+					</cechy>
+				</typ>
+			</ryby>
+		</topic>
+
+		<information>
+			<rodzaje>
+				<sposob id="1">
+					<tekst>
+						Wędkarstwo morskie – rodzaj wędkarstwa, w którym poławia się ryby morskie na wędkę z pokładu łodzi, 
+						z brzegu plaży lub z nabrzeża portowego. Zazwyczaj, pod tym pojęciem rozumie się wędkarstwo kutrowe,
+						 polegające na łowieniu z pokładu łodzi.
+					</tekst>
+				</sposob>
+				
+				<sposob id="2">
+					<tekst>
+						Wędkarstwo muchowe – jeden ze sposobów wędkowania, polegający na poławianiu ryb techniką z wykorzystaniem 
+						metod sztucznych na tzw. muszkę. Wędkarz (muszkarz), posługuje się wędką muchową, która jest zaopatrzona w 
+						kołowrotek muchowy oraz jeden z trzech rodzajów sznura, specjalnej linki.
+					</tekst>
+				</sposob>
+				
+				<sposob id="3">
+					<tekst>
+						Wędkarstwo podlodowe – rodzaj hobby i sportu, polegający na połowie ryb spod lodu. Praktykowane na
+						zamarzniętych akwenach. Zasady połowu w Polsce regulowane są przez Polski Związek Wędkarski, zawarte w
+						Regulaminie Amatorskiego Połowu Ryb PZW.
+					</tekst>
+				</sposob>
+
+				<sposob id="4">
+					<tekst>
+						Wędkarstwo spinningowe – metoda sportowego i amatorskiego połowu ryb przy użyciu wędki, kołowrotka i sztucznej 
+						przynęty polegająca na naprzemiennym zarzucaniu jej i ściąganiu za pomocą wędziska i kołowrotka. Wędkarz może 
+						wykonywać także wabiące ruchy wędziskiem tak, aby ruch przynęty jak najbardziej przypominał ruch chorej, przestraszonej
+						rybki.	
+					</tekst>
+				</sposob>
+				<sposob id="5">
+					<tekst>
+						Trolling – metoda połowu ryb drapieżnych polegająca na ciągnięciu wędką przynęty na żyłce lub lince za łodzią. Ruch przynęty
+						imituje ruch ryby i prowokuje do ataku. Przez pewien czas metoda była zakazana w Polsce, obecnie dozwolona. Dozwolona też w
+						niektórych krajach Skandynawii.
+					</tekst>
+				</sposob>
+			</rodzaje>
+			<history>
+				<wiedza rok="1989">
+					<tekst>
+						Dopiero po 1989 r. większe otwarcie na światową literaturę wędkarską (w której profesjonalna nomenklatura tematu była już
+						ukształtowana) oraz nastanie wolności wydawniczej spowodowały ogromne, w stosunku do poprzednich lat, zwiększenie nakładów
+						i tytułów wydawnictw wędkarskich, nie tylko ogólnoteoretycznych, ale także wszelkiego rodzaju monografii i pozycji zajmujących
+						się wieloma szczegółowymi aspektami wędkarstwa. Na tej podstawie ujednoliciły się pojęcia i definicje dotyczące teorii
+						wędkowania. Ustaliły się pewne istotne reguły w tym zakresie (chociaż wciąż w części literatury terminy te są stosowane
+						zamiennie).
+					</tekst>
+				</wiedza>
+				<klub zalozenie="1879-07-13">
+					<tekst>
+						Po wprowadzeniu na terenie Galicji i Lodomerii przepisów ustawy rybackiej indywidualne uprawianie wędkarstwa
+						stało się utrudnione, głównie z powodu ustanowienia rewirów rybackich, dzierżawionych przez rozmaitych
+						użytkowników. 13 lipca 1879 roku zostało powołane Krajowe Towarzystwo Rybackie, którego pierwszym prezesem
+						został dr M. Nowicki, sprawujący funkcję do 30 października 1890 roku. 
+					</tekst>
+				</klub>
+			</history>
+		</information>
+	</main>
+
+	<media>
+		<jpg src="zdj/choch.jpg">photo1</jpg>
+		<jpg src="zdj/dwuust.jpg">photo2</jpg>
+		<jpg src="zdj/geb.jpg">photo3</jpg>
+		<jpg src="zdj/top.jpg">photo4</jpg>
+	</media>
+
+	<links>
+		<link src="https://pl.wikipedia.org/wiki/W%C4%99dkarstwo">Ogolna wiedza</link>
+		<link src="https://dinoanimals.pl/zwierzeta/najwieksze-ryby-slodkowodne-top-10/">Ryby</link>
+		<link src="https://blog.decathlon.pl/sport/wedkarstwo/metoda-na-krotkie-wedkarskie-wypady-i-nie-tylko-2/">Metody</link>
+		<link src="https://wedkuje.pl/n/drgajaca-szczytowka/2588">picker-info</link>
+	</links>
+
+	<author>
+		<name>Michal</name>
+		<surname>Lewko</surname>
+	</author>
+</wedkarstwo>

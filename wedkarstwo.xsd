@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="wedkarstwo" >
+		<xs:complexType >
+			<xs:sequence>
+				<xs:element name="main" type="mainType" />
+				<xs:element name="media" type="mediaType" minOccurs="0" maxOccurs="4" />
+                <xs:element name="links" type="linksType"  maxOccurs="unbounded"/>
+                <xs:element ref="author"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+    <xs:complexType name="mainType">
+        <xs:group ref="m"/>
+    </xs:complexType>
+    
+    <xs:group name="m">
+        <xs:sequence>
+            <xs:element name="wstep" type="wstepType"/>
+            <xs:element ref="topic"/>
+            <xs:element name="information" type="informationType"/>
+        </xs:sequence>
+    </xs:group>
+
+        <xs:simpleType name="wstepType">
+            <xs:restriction base="xs:string">
+                <xs:minLength value="20"/>
+                <xs:maxLength value="70"/>
+            </xs:restriction>
+        </xs:simpleType>
+
+    <xs:element name="topic">
+        <xs:complexType>
+		    <xs:sequence>
+			    <xs:element name="ryby" type="rybyType" minOccurs="1" maxOccurs="2" />
+		    </xs:sequence>
+	    </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="rybyType">
+		<xs:sequence>
+			<xs:element name="typ" type="typType" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+        <xs:attribute ref="kind" use="required"/>
+    </xs:complexType>
+
+	<xs:complexType name="typType" >
+		<xs:sequence>
+			<xs:element name="nazwa" type="list" minOccurs="0" maxOccurs="1"  />
+			<xs:element name="cechy" type="cechyType" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute ref="id" />
+	</xs:complexType>
+
+<xs:simpleType name="list">
+        <xs:list itemType="krotkiType"/>
+    </xs:simpleType>
+    
+
+    <xs:complexType name="cechyType">
+		<xs:sequence>
+			<xs:element name="waga" type="xs:decimal" maxOccurs="1" />
+			<xs:element name="dlugosc" type="union" maxOccurs="1" />
+            <xs:element name="unikalnosc" type="maxkrotkiType" maxOccurs="1" />
+		</xs:sequence>
+    </xs:complexType>
+
+    
+
+    <xs:simpleType name="union">
+        <xs:union memberTypes="krotkiType ograniczenie"/>
+     </xs:simpleType>
+    
+    <xs:complexType name="informationType">
+		<xs:sequence>
+			<xs:element name="rodzaje" type="rodzajeType" />
+			<xs:element name="history" type="historyType" />
+		</xs:sequence>
+	</xs:complexType>
+
+    <xs:complexType name="rodzajeType">
+		<xs:sequence>
+			<xs:element name="sposob" type="sposobType"  maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+    <xs:complexType name="sposobType">
+        <xs:sequence>
+            <xs:element name="tekst"  maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute ref="id"/>
+    </xs:complexType>
+
+    <xs:complexType name="historyType">
+        <xs:sequence>
+            <xs:element name="wiedza">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="tekst"/>
+                    </xs:sequence>
+                    <xs:attribute name="rok" type="xs:long"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="klub">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="tekst"/>
+                    </xs:sequence>
+                    <xs:attribute name="zalozenie" type="xs:date"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="wiedzaType">
+        <xs:sequence>
+            <xs:element ref="tekst"/>
+        </xs:sequence>
+        <xs:attribute name="rok" type="xs:long"/>
+    </xs:complexType>
+
+    <xs:complexType name="mediaType">
+        <xs:sequence>
+            <xs:element name="jpg" type="jpgType" minOccurs="3" maxOccurs="5"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="jpgType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="src" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="linksType">
+        <xs:sequence>
+            <xs:element name="link" type="linkType" minOccurs="3" maxOccurs="5"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="linkType">
+         <xs:simpleContent>
+             <xs:extension base="xs:string">
+                <xs:attribute name="src">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="https://.+"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="ograniczenie">
+        <xs:restriction base="xs:byte">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:attribute name="id" type="xs:byte"/>
+    
+    <xs:element name="tekst">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="7000"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:simpleType name="maxkrotkiType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+
+    <xs:simpleType name="krotkiType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="25" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="dlugiType">
+		<xs:restriction base="xs:string">
+             <xs:minLength value="2" />
+			<xs:maxLength value="40" />
+		</xs:restriction>
+	</xs:simpleType>
+
+    <xs:attribute name="kind" type="kindType" />
+
+	<xs:simpleType name="kindType" >
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="słodkowodne" />
+			<xs:enumeration value="słonowodne" />
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+    <xs:element name="author" type="authorType" />
+
+    <xs:complexType name="authorType">
+		<xs:sequence>
+			<xs:element name="name" type="krotkiType" />
+			<xs:element name="surname" type="krotkiType" />
+		</xs:sequence>
+	</xs:complexType>
+    
+</xs:schema>

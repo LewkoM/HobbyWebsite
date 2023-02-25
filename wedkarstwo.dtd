@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!ENTITY surname SYSTEM "surname.xml">
+<!ENTITY name "Michał">
+<!ELEMENT wedkarstwo (main,media,links,author)>
+<!ATTLIST wedkarstwo 
+
+    xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance">
+
+<!ATTLIST wedkarstwo 
+
+        xsi:noNamespaceSchemaLocation NMTOKEN #REQUIRED>
+
+<!ELEMENT main (wstep,topic,information)>
+<!ELEMENT wstep (#PCDATA)>
+<!ELEMENT topic (ryby)+>
+<!ELEMENT ryby (typ)+>
+<!ATTLIST ryby
+    
+    kind (słodkowodne|słonowodne) "słodkowodne">
+
+<!ELEMENT typ (nazwa,cechy)>
+<!ATTLIST typ
+    
+    id CDATA #REQUIRED>
+
+<!ELEMENT nazwa (#PCDATA)>
+<!ELEMENT cechy (waga,dlugosc,unikalnosc)>
+<!ELEMENT waga (#PCDATA)>
+<!ELEMENT dlugosc (#PCDATA)>
+<!ELEMENT unikalnosc (#PCDATA)>
+<!ELEMENT information (rodzaje,history)>
+<!ELEMENT rodzaje (sposob)+>
+<!ATTLIST sposob
+    
+    id CDATA #REQUIRED>
+
+<!ELEMENT sposob (tekst)>
+<!ELEMENT history (wiedza,klub)>
+<!ELEMENT wiedza (tekst)>
+<!ATTLIST wiedza
+    
+    rok CDATA #REQUIRED>
+
+<!ELEMENT klub (tekst)>
+<!ATTLIST klub
+    
+    zalozenie NMTOKEN #REQUIRED>
+
+<!ELEMENT tekst (#PCDATA)>
+<!ELEMENT media (jpg)+>
+<!ELEMENT jpg (#PCDATA)>
+<!ATTLIST jpg
+    
+    src CDATA #REQUIRED>
+
+<!ELEMENT links (link)+>
+<!ELEMENT link (#PCDATA)>
+<!ATTLIST link
+    
+    src CDATA #REQUIRED>
+
+<!ELEMENT author (name,surname)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT surname (#PCDATA)>
